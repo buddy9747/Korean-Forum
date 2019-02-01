@@ -1,0 +1,61 @@
+{% extends 'master.html' %}
+{% block title %} Korean Trip{% endblock %}
+{% block body %}
+    {% load staticfiles %}
+<br>
+<div class="card">
+  <div class="card-header" style="background-color: blue;font-size: 21px;color:white;">
+      Cute Buddies
+  </div>
+  <div class="card-body" style="background-image: url({% static "images/korean_actors.jpg" %});background-size:cover; ">
+   <!-- <h4 class="card-title"><span style="color: deeppink">Cute Buddies</span></h4>-->
+    <p class="card-text" style="color: deeppink;font-family: 'Charm', cursive;font-size: 27px;">Korean actors are well known for their attractive and charmig look.
+        They are most handsome and grooming guys.They are plucking their hair, shaving eyebrows, shaving face,
+        combing their hair with a real comb(!), applying lotion/aftershave, moisturizer.<br>To see their profiles please visit in this section... </p>
+    <a href="{% url 'actor' %}" class="btn btn-primary">See more</a>
+  </div>
+</div>
+<br><br>
+
+    <div class="card">
+  <div class="card-header" style="background-color: blue;font-size: 21px;color:white;">
+      Beautiful Girls
+  </div>
+  <div class="card-body" style="background-image: url({% static "images/korean_actress.png" %});">
+    <!--<h4 class="card-title"><span style="color: deeppink">Beautiful Girls</span></h4>-->
+    <p class="card-text" style="color: deeppink;font-family: 'Charm', cursive;font-size: 27px;">Korean actresses are most beautiful and stunning. They look like a doll and behave like a baby but they are multi-talented.<br>
+    To see their profiles please visit in this section...</p>
+    <a href="{% url 'actress' %}" class="btn btn-primary">See more</a>
+  </div>
+</div>
+<br><br>
+
+    <div class="card">
+  <div class="card-header" style="background-color: blue;font-size: 21px;color:white;">
+      Spicy Dishes
+  </div>
+  <div class="card-body" style="background-image: url({% static "images/korean_dishes.png" %})">
+   <!-- <h4 class="card-title"><span style="color: deeppink">Spicy Dishes</span></h4>-->
+    <p class="card-text" style="color: deeppink;font-family: 'Charm', cursive;font-size: 27px;">Korean dishes are very more healthy and less oily and different from other countries.
+        Korean people most prefer sea foods and less oily foods.<br>
+    To see korean spicy dishes please visit in this section...</p>
+    <a href="{% url 'food' %}" class="btn btn-primary">See more</a>
+  </div>
+</div>
+
+<br><br>
+    <div class="card">
+   <div class="card-header" style="background-color: blue;font-size: 21px;color:white;">
+      Go Somewhere
+  </div>
+  <div class="card-body" style="background-image: url({% static "images/korean_places.jpg" %})">
+    <!--<h4 class="card-title"><span style="color: deeppink">Go Somewhere</span></h4>-->
+    <p class="card-text" style="color: deeppink;font-family: 'Charm', cursive;font-size: 27px;">Korea is equally known for its green, hilly countryside dotted with cherry trees and centuries-old Buddhist temples,
+        plus its coastal fishing villages, sub-tropical islands and high-tech cities such as Seoul, the capital.<br>
+    To see Korean famous places please visit in this section...</p>
+    <a href="{% url 'place' %}" class="btn btn-primary">See more</a>
+  </div>
+</div>
+<br>
+    <br>
+{% endblock %}

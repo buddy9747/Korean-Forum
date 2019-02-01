@@ -1,0 +1,86 @@
+{% extends 'master.html' %}
+{% block title %} {{ object.act_id.act_name }} {% endblock %}
+{% block body %}
+
+    <centre>
+
+<img  style="width: 399px" src="{{ object.act_id.act_img.url }}">
+        <br>
+        <h2>{{ object.act_id.act_name }}</h2>
+        <br>
+        <table class="table table-condensed">
+            <th style="color:deeppink;font-size: 27px">Bio/wiki</th>
+            <tr>
+                <td>Nick Name : </td><td>{{ object.nick_name }}</td>
+            </tr>
+            <th style="color:deeppink;font-size: 27px">Physical Status & More</th>
+            <tr>
+                <td>Height : </td><td>{{ object.height }}</td>
+            </tr>
+             <tr>
+                <td>Weight : </td><td>{{ object.weight }}</td>
+            </tr>
+            <tr>
+                <td>Eye Color : </td><td>{{ object.eye_color }}</td>
+            </tr>
+            <tr>
+                <td>Hair Color : </td><td>{{ object.hair_color }}</td>
+            </tr>
+            <th style="color:deeppink;font-size: 27px;">Personal Life</th>
+            <tr>
+                <td>Date of Birth</td><td>{{ object.date_of_birth }}</td>
+                </tr>
+            <tr>
+                <td>Birth Place</td><td>{{ object.birthplace_place }}</td>
+                </tr>
+            <tr>
+                <td>Affairs</td><td>{{ object.affairs }}</td>
+                </tr>
+            <tr>
+                <td>Marital Status</td><td>{{ object.marital_status }}</td>
+                </tr>
+            <tr>
+                <td>Ethnicity</td><td>{{ object.ethnicity }}</td>
+                </tr>
+            <tr>
+                <td>Nationality</td><td>{{ object.nationality }}</td>
+                </tr>
+            <tr>
+                <td>Education</td><td>{{ object.education }}</td>
+            </tr>
+            <tr>
+                <td>Horoscope</td><td>{{ object.horoscope }}</td>
+            </tr>
+            <tr>
+                <td>Net Worth</td><td>{{ object.net_worth }}</td>
+            </tr>
+            <tr>
+                <td>About Career<td>{{ object.about_career }}</td>
+            </tr>
+
+
+            </table>
+
+    <br><br>
+
+</centre>
+<h3 style="text-align: center"><b>You may also visit</b> </h3><br>
+ <div class="row" style="margin-left: 10px">
+
+    {% for i in b %}
+ <div class="col-md-4">
+     <div class="card" style="width:400px">
+        <img class="card-img-top" style="width: 399px" src="{{ i.act_img.url }}" alt="Card image">
+  <div class="card-body">
+    <h4 class="card-title">{{ i.act_name }}</h4>
+    <p class="card-text">{{ i.act_sum }}</p>
+    <a href="{% url 'detail' i.act_name %}" class="btn btn-primary">See Profile</a>
+  </div>
+</div></div>
+    {% endfor %}</div><br>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'master.html' %}
+{% block title %} Login {% endblock %}
+{% block body %}
+
+      <div class="container">
+    <div class="container">
+    <div class="col-sm-6">
+    <div class="panel panel-primary">
+    <div class="panel-heading"><h2 style="text-align: center">Login</h2></div>
+    <div class="panel-body">
+
+    <form class="form-horizontal" method="post" enctype="multipart/form-data">
+    <center>
+    {% csrf_token%}
+    {% for field in form %}
+        <span class="danger">{{ field.errors }}</span><br><br>
+        <label>{{ field.label_tag }}</label>
+        {{ field }}
+    {% endfor %}</center>
+    <br><br>
+    <button type="submit" class="btn btn-primary" value="SignIn" style="margin-left: 70%;margin-top: -10px">submit</button><br><br>
+    </form>
+    <script>
+    {% if messages %}
+                {% for message in messages %}
+                    alert(message);
+                {% endfor %}
+            {% endif %}
+    </script>
+    </div>
+    </div>
+    </div>
+    </div>
+</div>
+
+{% endblock %}

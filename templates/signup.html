@@ -1,0 +1,27 @@
+{% extends 'master.html' %}
+{% block title %} Sign Up{% endblock %}
+{% block body %}
+    <div class="container">
+    <div class="panel panel-default">
+    <div class="panel-heading"><h2>Registration</h2></div>
+    <div class="panel-body">
+
+<form method="post">
+    {% csrf_token %}
+    {{  form.as_p }}
+    <button type="submit" class="btn btn-primary" value="Signup" style="margin-left: 20%">submit</button>
+</form>
+    <script>
+    {% if messages %}
+                {% for message in messages %}
+                    alert(message);
+                {% endfor %}
+            {% endif %}
+    </script>
+
+    </div>
+    </div>
+    </div>
+
+
+{% endblock %}
